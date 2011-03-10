@@ -28,9 +28,17 @@
 	<div id="header">
 		<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a><span><?php bloginfo('description'); ?></span></h1>
 		<div id="search">
-			<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-				<input type="text" value="Search" name="s" id="s" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='')this.value='Search'" />
-			</form>
+          <?php // some stuff to work with the livesearch plugin 'live-search-popup'
+            if(function_exists('livesearchpopup_results')) : ?>
+              <form name="ls_form" class="form" id="searchform" method="get" action="<?php print get_bloginfo('wpurl')?>">
+                <div class="editbox"><input type="text" name="s" id="s" /></div>
+              </form>
+              <?php livesearchpopup_results();
+            else : ?>
+              <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+                  <input type="text" value="Search" name="s" id="s" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='')this.value='Search'" />
+              </form><?php
+            endif; ?>
 		</div>
 	</div>
 
