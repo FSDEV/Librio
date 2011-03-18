@@ -2,8 +2,8 @@
 	
 	<div id="footer">
 		<p>
-			Copyright &copy; 2008. All right reserved. 
-			Theme by <a href="http://deniart.ru">deniart</a>, modified by fsdev-cmiller.
+			&copy; <?php echo date('Y'); ?>. All rights reserved.
+			Theme by <a href="http://deniart.ru">deniart</a>, modified by <a href="https://github.com/FSDEV/Librio">fsdev-cmiller</a>.
 		</p>
 	</div>
 </div>
